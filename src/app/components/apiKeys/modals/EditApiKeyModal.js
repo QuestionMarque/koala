@@ -18,6 +18,8 @@ export const EditApiKeyModal = ({
 }) => {
   if (!isOpen) return null;
 
+  const rateLimit = keyType === 'production' ? '1,000' : '100';
+
   return (
     <div className={styles.modal.overlay}>
       <div className={styles.modal.container}>
@@ -59,7 +61,7 @@ export const EditApiKeyModal = ({
               <span className="text-white">{keyType}</span>
             </div>
             <span className="text-[#94a3b8]">
-              Rate limited to {keyType === 'production' ? '1,000' : '100'} requests/minute
+              Rate limited to {rateLimit} requests/minute
             </span>
           </div>
         </div>
@@ -93,8 +95,8 @@ export const EditApiKeyModal = ({
               </div>
             </div>
           )}
-          <p className="mt-3 text-[#94a3b8]">
-            * If the combined usage of all your keys exceeds your plan's limit, all requests will be rejected.
+          <p className="mt-2 text-sm text-[#64748b] dark:text-[#94a3b8]">
+            If the combined usage of all your keys exceeds your plan&apos;s limit, all requests will be rejected.
           </p>
         </div>
 

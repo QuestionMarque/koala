@@ -210,8 +210,8 @@ export default function Dashboard() {
               onEdit={(key) => {
                 setEditingKey(key);
                 setEditKeyName(key.name);
-                setEditKeyType(key.type || 'development');
-                setEditMonthlyLimit(key.monthlyLimit?.toString() || '1000');
+                setEditKeyType(key.type || "development");
+                setEditMonthlyLimit(key.monthlyLimit?.toString() || "1000");
                 setEditLimitEnabled(key.monthlyLimit !== null && key.monthlyLimit !== undefined);
                 setEditPiiEnabled(key.piiEnabled || false);
                 setShowEditKeyModal(true);
@@ -285,7 +285,7 @@ export default function Dashboard() {
               <h3 className="text-xl font-bold mb-4">New API Key Created</h3>
               <div className="mb-4">
                 <p className="text-sm text-gray-600 mb-2">
-                  Make sure to copy your API key now. You won't be able to see it again!
+                  Make sure to copy your API key now. You won&apos;t be able to see it again!
                 </p>
                 <div className="bg-gray-50 p-4 rounded-lg font-mono text-sm break-all">
                   {newlyCreatedKey.key}
@@ -295,7 +295,7 @@ export default function Dashboard() {
                 <button
                   onClick={() => {
                     navigator.clipboard.writeText(newlyCreatedKey.key);
-                    toast.success('API key copied to clipboard');
+                    toast.success("API key copied to clipboard");
                   }}
                   className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
                 >

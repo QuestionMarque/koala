@@ -17,6 +17,8 @@ export const CreateApiKeyModal = ({
 }) => {
   if (!isOpen) return null;
 
+  const createButtonText = isCreating ? 'Creating...' : 'Create API Key';
+
   return (
     <div className={styles.modal.overlay}>
       <div className="bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0] dark:from-[#1e293b] dark:to-[#0f172a] rounded-2xl p-8 w-[480px] shadow-xl">
@@ -90,7 +92,7 @@ export const CreateApiKeyModal = ({
                 className="w-full px-4 py-2.5 bg-white dark:bg-[#1e293b] border border-[#e2e8f0] dark:border-[#334155] rounded-xl text-[#0f172a] dark:text-white placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#3b82f6] dark:focus:ring-[#60a5fa]"
               />
               <p className="mt-2 text-sm text-[#64748b] dark:text-[#94a3b8]">
-                If the combined usage of all your keys exceeds your plan's limit, all requests will be rejected.
+                If the combined usage of all your keys exceeds your plan&apos;s limit, all requests will be rejected.
               </p>
             </div>
           )}
@@ -109,17 +111,13 @@ export const CreateApiKeyModal = ({
             disabled={isCreating}
             className="px-6 py-2.5 bg-[#3b82f6] hover:bg-[#2563eb] text-white transition-colors text-base font-medium rounded-lg disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
-            {isCreating ? (
-              <>
-                <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                </svg>
-                Creating...
-              </>
-            ) : (
-              'Create API Key'
+            {isCreating && (
+              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+              </svg>
             )}
+            {createButtonText}
           </button>
         </div>
       </div>
