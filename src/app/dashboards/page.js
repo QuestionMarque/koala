@@ -127,36 +127,6 @@ export default function Dashboard() {
 
   return (
     <div className={styles.container}>
-      {/* Sidebar */}
-      <aside className={styles.sidebar}>
-        <div className="p-4">
-          <div className="mt-6">
-            <ul>
-              <li className="flex items-center p-2 hover:bg-gray-200 cursor-pointer">
-                <FaHome className="mr-2" />
-                <span>Overview</span>
-              </li>
-              <li className="flex items-center p-2 hover:bg-gray-200 cursor-pointer">
-                <FaUser className="mr-2" />
-                <span>My Account</span>
-              </li>
-              <li className="flex items-center p-2 hover:bg-gray-200 cursor-pointer">
-                <FaClipboardList className="mr-2" />
-                <span>Research Assistant</span>
-              </li>
-              <li className="flex items-center p-2 hover:bg-gray-200 cursor-pointer">
-                <FaPlayCircle className="mr-2" />
-                <span>API Playground</span>
-              </li>
-              <li className="flex items-center p-2 hover:bg-gray-200 cursor-pointer">
-                <FaBookOpen className="mr-2" />
-                <span>Documentation</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </aside>
-
       {/* Main Content */}
       <div className={styles.mainContent}>
         {/* Header */}
